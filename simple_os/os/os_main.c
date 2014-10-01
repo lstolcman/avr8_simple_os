@@ -12,6 +12,8 @@
 
 #include <avr/io.h>
 #include <stdint.h>
+#include "os_main.h"
+#include "os_internal.h"
 #include "os_task.h"
 #include "../main.h"
 
@@ -49,9 +51,22 @@
  * @note Something to note.
  * @warning Warning.
  */
+
+
+
+
+
+
 int main(void)
 {
+	os_internal_init();
 	os_init();
 	while (1);
 
 }
+
+
+
+
+
+

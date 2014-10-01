@@ -105,7 +105,22 @@
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="os\os_delay.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="os\os_delay.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="os\os_internal.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="os\os_internal.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="os\os_main.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="os\os_main.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="os\os_task.c">
