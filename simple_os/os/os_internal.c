@@ -1,7 +1,17 @@
+/**
+ * @file os_internal.c
+ * 
+ */
+
 #include "os_internal.h"
 
+/** 
+ * @brief ticks
+ * Variable determines how many ticks (=interrupts for sheduler) happened.
+ * For now, ticks are every 100us
+ */
 
-extern volatile uint16_t elapsed_us;
+volatile uint16_t ticks;
 
 
 ISR(INT0_vect)

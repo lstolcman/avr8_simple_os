@@ -1,3 +1,8 @@
+/**
+ * @file main.c
+ * 
+ */
+
 #include "main.h"
 
 
@@ -17,6 +22,7 @@ void task2(void)
 
 void os_init(void)
 {
+	os_task_add(task1);
 	os_task_add(task1);
 }
 

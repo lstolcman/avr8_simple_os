@@ -9,13 +9,8 @@
  * @see http://www.stack.nl/~dimitri/doxygen/commands.html
  */
 
-
-#include <avr/io.h>
-#include <stdint.h>
 #include "os_main.h"
-#include "os_internal.h"
-#include "os_task.h"
-#include "../main.h"
+
 
 
 /**

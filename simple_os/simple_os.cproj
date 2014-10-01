@@ -126,6 +126,12 @@
     <Compile Include="os\os_main.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="os\os_sheduler.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="os\os_sheduler.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="os\os_task.c">
       <SubType>compile</SubType>
     </Compile>

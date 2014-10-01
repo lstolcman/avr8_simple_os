@@ -1,13 +1,25 @@
+/**
+ * @file os_task.c
+ * 
+ */
+
 #include "os_task.h"
 
 
-void os_task_add(void* task_ptr)
+bool os_task_add(void (*task_ptr)(void))
 {
-	
+	if (task_ptr)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
 
 
-void oss_task_yield(void)
+void os_task_yield(void)
 {
 	
 }
