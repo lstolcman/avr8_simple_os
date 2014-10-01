@@ -1,6 +1,8 @@
 
 
 
-#define _CLK_MHZ == 16
+
+#define _OS_INTERNAL_TIMER_CONTROL_MASK (1<<CS01) | (1<<CS00)
+#define _OS_INTERNAL_TIMER_COUNTER 231
 
 

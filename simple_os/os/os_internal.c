@@ -2,12 +2,13 @@
 
 
 extern volatile uint16_t elapsed_us;
-extern volatile uint16_t elapsed_ms;
-extern volatile uint16_t elapsed_s;
+
 
 ISR(INT0_vect)
 {
-
+	cli();
+	TCNT0 = (_OS_INTERNAL_TIMER_COUNTER);
+	sei();
 }
 
 void os_internal_init(void)
@@ -19,9 +20,9 @@ void os_internal_init(void)
 	 * TCNT0 set to 256-25=231
 	 */
 	#if F_CPU == 16000000
-	    TCCR0 |= (1<<CS01) | (1<<CS00);
+	    TCCR0 |= (_OS_INTERNAL_TIMER_CONTROL_MASK);
 	    TIMSK |= (1<<TOIE0);
-	    TCNT0 = 6;
+	    TCNT0 = (_OS_INTERNAL_TIMER_COUNTER);
 	#else
 	#error Unsupported F_CPU
 	#endif
