@@ -50,10 +50,18 @@
 
 
 
+volatile os_task_table_entry os_task_table[_OS_TASK_MAX_COUNT];
+volatile uint8_t os_task_current_thread;
+volatile uint8_t os_task_next_thread;
 
+void os_void_loop(void)
+{
+	while (1);
+}
 
 int main(void)
 {
+
 	os_internal_init();
 	os_init();
 	while (1);

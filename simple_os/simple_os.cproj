@@ -108,10 +108,13 @@
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="os\os_delay.c">
+    <Compile Include="os\delay\os_delay.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="os\os_delay.h">
+    <Compile Include="os\delay\os_delay.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="os\os_common.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="os\os_internal.c">
@@ -126,21 +129,29 @@
     <Compile Include="os\os_main.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="os\os_sheduler.c">
+    <Compile Include="os\task\os_dispatcher.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="os\os_sheduler.h">
+    <Compile Include="os\task\os_dispatcher.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="os\os_task.c">
+    <Compile Include="os\task\os_sheduler.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="os\os_task.h">
+    <Compile Include="os\task\os_sheduler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="os\task\os_task.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="os\task\os_task.h">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="os" />
+    <Folder Include="os\delay" />
+    <Folder Include="os\task" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>

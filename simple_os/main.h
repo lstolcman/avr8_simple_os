@@ -4,8 +4,8 @@
 #include <avr/io.h>
 
 
-#include "os/os_task.h"
-#include "os/os_delay.h"
+#include "os/task/os_task.h"
+#include "os/delay/os_delay.h"
 
 
 void os_init(void);

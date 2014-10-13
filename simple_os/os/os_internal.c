@@ -5,6 +5,7 @@
 
 #include "os_internal.h"
 
+
 /** 
  * @brief ticks
  * Variable determines how many ticks (=interrupts for sheduler) happened.
@@ -14,28 +15,28 @@
 volatile uint16_t ticks;
 
 
-ISR(INT0_vect)
+
+ISR(INT0_vect, ISR_NAKED)
 {
-	cli();
+	cli(); // instead, use util/atomic.h
 	TCNT0 = (_OS_INTERNAL_TIMER_COUNTER);
+
+	
+	//search next thread
+	os_sheduler();
+	
+	//give context
+	os_dispatcher();
+	
 	sei();
 }
 
 void os_internal_init(void)
 {
-	//Timer0 init
-	/* Timer settings for 16MHz:
-	 * interrupt every 100us
-	 * prescaler set to /64
-	 * TCNT0 set to 256-25=231
-	 */
-	#if F_CPU == 16000000
-	    TCCR0 |= (_OS_INTERNAL_TIMER_CONTROL_MASK);
-	    TIMSK |= (1<<TOIE0);
-	    TCNT0 = (_OS_INTERNAL_TIMER_COUNTER);
-	#else
-	#error Unsupported F_CPU
-	#endif
+	
+	TCCR0 |= (_OS_INTERNAL_TIMER_CONTROL_MASK);
+	TIMSK |= (1<<TOIE0);
+	TCNT0 = (_OS_INTERNAL_TIMER_COUNTER);
 	
 }
 
