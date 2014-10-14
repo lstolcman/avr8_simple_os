@@ -12,7 +12,12 @@
 #include "../main.h"
 
 void os_void_loop(void);
-int main(void);
 
+int main(void)
+{
 
+	os_internal_init();
+	os_init();
+
+}
 

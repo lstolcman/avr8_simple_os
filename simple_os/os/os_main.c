@@ -59,14 +59,7 @@ void os_void_loop(void)
 	while (1);
 }
 
-int main(void)
-{
 
-	os_internal_init();
-	os_init();
-	while (1);
-
-}
 
 
 

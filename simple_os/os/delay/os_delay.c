@@ -3,6 +3,11 @@
 *
 */
 
+/*
+ * http://www.nongnu.org/avr-libc/user-manual/group__util__delay.html
+ * http://www.nongnu.org/avr-libc/user-manual/group__util__delay__basic.html
+ */
+
 #include "os_delay.h"
 
 
