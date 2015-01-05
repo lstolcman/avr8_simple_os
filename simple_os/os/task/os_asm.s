@@ -49,14 +49,16 @@ push r28
 push r29
 push r30
 push r31
-
+in r0, SREG //save sSREG
+push r0
 ret
 
 
 
 //pop all registers from stack
 os_asm_popa:
-
+pop r0
+out SREG, r0 //restore SREG
 pop r31
 pop r30
 pop r29
